@@ -3,7 +3,7 @@ const router = express.Router();
 const {User,Blog} = require("../models/");
 const bcrypt  = require("bcrypt");
 
-//find all
+//find all users
 router.get("/", (req, res) => {
   User.findAll({
     include:[Blog]
@@ -20,7 +20,7 @@ router.get("/logout",(req,res)=>{
   req.session.destroy();
   res.redirect("/")
 })
-//find one
+//find one user
 router.get("/:id", (req, res) => {
   User.findByPk(req.params.id,{})
     .then(dbUser => {
