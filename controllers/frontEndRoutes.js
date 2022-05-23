@@ -15,12 +15,12 @@ router.get("/",(req,res)=>{
 
 router.get("/login",(req,res)=>{
     if(req.session.user){
-        return res.redirect("/profile")
+        return res.redirect("/dashboard")
     }
     res.render("login")
 })
 
-router.get("/profile",(req,res)=>{
+router.get("/dashboard",(req,res)=>{
     if(!req.session.user){
         return res.redirect("/login")
     }
@@ -32,7 +32,7 @@ router.get("/profile",(req,res)=>{
         console.log("=======")
         console.log(hbsData);
         hbsData.loggedIn = req.session.user?true:false
-        res.render("profile",hbsData)
+        res.render("dashboard",hbsData)
     })
 })
 

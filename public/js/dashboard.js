@@ -1,4 +1,4 @@
-console.log("hello")
+console.log("profil linked")
 document.querySelector("#newBlog").addEventListener("submit",e=>{
     e.preventDefault()
     const blogObj = {

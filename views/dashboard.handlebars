@@ -1,0 +1,22 @@
+<h1 class="uk-position-top-center" style="margin-top:10%">Say whats on your mind {{username}}!</h1>
+<form action="" id="newBlog" style="margin-top:10%; margin-left: 32%"; >
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-box-shadow-large">
+        <h3 class="uk-card-title">
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Blog Title" id="title">
+            </div>
+        </h3>
+        <div class="uk-margin">
+            <textarea class="uk-textarea" cols="20" rows="10" placeholder="Textarea" style="resize: none" id="body"></textarea>
+        </div>
+        <button class="uk-button uk-button-default">Submit</button>
+    </div>
+</form>
+<h2>All your blogs:</h2>
+{{#each Blogs}} <h3>{{title}}</h3>
+<p>{{body}}</p>
+<button>delete</button>
+<hr>
+{{/each}}
+
+<script src="/js/dashboard.js"></script>

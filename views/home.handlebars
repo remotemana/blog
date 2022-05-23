@@ -1,0 +1,15 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <h1 class="uk-position-center">Blog-I.T!</h1>
+            <li class="uk-active"><a href="/login" style="font-size: 20px;">Login</a></li>
+        </ul>
+
+    </div>
+</nav>
+{{#each blogs}}
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    <hr>
+{{/each}}

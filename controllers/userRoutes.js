@@ -17,9 +17,13 @@ router.get("/", (req, res) => {
     });
 });
 router.get("/logout",(req,res)=>{
-  req.session.destroy();
-  res.redirect("/")
-})
+
+  req.session.destroy(() => {
+
+    res.redirect("/")
+    console.log("user has been logged out")
+  })
+});
 //find one user
 router.get("/:id", (req, res) => {
   User.findByPk(req.params.id,{})
