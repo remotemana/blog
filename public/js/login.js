@@ -16,7 +16,7 @@ document.querySelector("#login").addEventListener("submit",e=>{
         }
     }).then(res=>{
         if(res.ok){
-            location.href="/dashboard"
+            location.href="/home"
         } else {
             alert("trumpet sound")
         }

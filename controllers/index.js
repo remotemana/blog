@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const commentsRoutes = require("./commentsRoutes");
+router.use("/api/comments",commentsRoutes)
+
 const userRoutes = require("./userRoutes");
 router.use("/api/users",userRoutes)
 

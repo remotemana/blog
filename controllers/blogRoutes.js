@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const {
-    User,
+    Comment,
     Blog
 } = require("../models");
 
 
 //find all
 router.get("/", (req, res) => {
-    Blog.findAll({})
+    Blog.findAll({include: [Comment]})
         .then(dbBlogs => {
             res.json(dbBlogs);
         })

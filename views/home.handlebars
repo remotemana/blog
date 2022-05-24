@@ -1,15 +1,23 @@
-<nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
+<h1 class="uk-heading-line uk-text-center"><span
+        style="border: 1px solid; padding-left: 10px; padding-right: 10px; padding-bottom: 20px; padding-top: 20px">Welcome
+        to Blog-I.T!</span></h1>
 
-        <ul class="uk-navbar-nav">
-            <h1 class="uk-position-center">Blog-I.T!</h1>
-            <li class="uk-active"><a href="/login" style="font-size: 20px;">Login</a></li>
-        </ul>
 
-    </div>
-</nav>
 {{#each blogs}}
-    <h3>{{title}}</h3>
-    <p>{{body}}</p>
-    <hr>
+<a href="/post/{{id}}"><h3>{{title}}</h3></a>
+<p>{{body}}</p>
+<hr>
 {{/each}}
+
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <form>
+            <h2 class="uk-modal-title">Headline</h2>
+            <input type="text">
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                <button class="uk-button uk-button-primary" type="button">Save</button>
+            </p>
+        </form>
+    </div>
+</div>

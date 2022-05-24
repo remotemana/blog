@@ -1,4 +1,4 @@
-<h1 class="uk-position-top-center" style="margin-top:10%">Say whats on your mind {{username}}!</h1>
+<h1 class="uk-position-top-center" style="margin-top:10%">Say whats on your mind!</h1>
 <form action="" id="newBlog" style="margin-top:10%; margin-left: 32%"; >
     <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-box-shadow-large">
         <h3 class="uk-card-title">
@@ -13,8 +13,10 @@
     </div>
 </form>
 <h2>All your blogs:</h2>
+
 {{#each Blogs}} <h3>{{title}}</h3>
 <p>{{body}}</p>
+<button>update</button>
 <button>delete</button>
 <hr>
 {{/each}}

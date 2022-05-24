@@ -20,15 +20,16 @@
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/home">Home</a> </li>
             <li class="uk-active"><a href="/dashboard">Dashboard</a></li>
-            <li> <a href="/api/users/logout">Logout</a></li>
-            <li class="uk-position-center"> <p>Hello, {{username}}</p></li>
+            <li class="uk-active"> <a  href="/api/users/logout">Logout</a></li>
+            <li class="uk-position-center uk-text-middle uk-text-large" style="margin-top: 1%; font-size:30px; font-weight: 900px !important"> <p>Hello, {{username}}</p></li>
         </ul>
 
     </div>
 </nav>
         {{else}}
-
+    <script>function notLogged(){location.replace("login")}</script>
         {{/if}}
     </header>
     <main>
