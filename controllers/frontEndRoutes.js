@@ -23,7 +23,7 @@ router.get("/home",(req,res)=>{
 // =============================================comment route test number two===============================
 router.get("/post/:id",(req,res)=>{
     if(!req.session.user){
-        return res.redirect("/login")
+        return res.redirect("/")
     }
     Blog.findByPk(req.params.id).then(commentBlog=>{
        
@@ -49,15 +49,15 @@ router.get("/post/:id",(req,res)=>{
 // })
 
 router.get("/login",(req,res)=>{
-    if(req.session.user){
-        return res.redirect("/login")
+    if(!req.session.user){
+        return res.redirect("/")
     }
     res.render("home")
 })
 
 router.get("/dashboard",(req,res)=>{
     if(!req.session.user){
-        return res.redirect("/login")
+        return res.redirect("/")
     }
     User.findByPk(req.session.user.id,{
         include:[Blog]
