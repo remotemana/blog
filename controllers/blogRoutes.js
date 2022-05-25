@@ -61,11 +61,14 @@ router.post("/", (req, res) => {
 
 //update Blog
 router.put("/:id", (req, res) => {
+    console.log(req.body)
+    console.log(req.params.id)
     Blog.update(req.body, {
             where: {
                 id: req.params.id
             }
         }).then(updatedBlog => {
+            console.log(updatedBlog);
             res.json(updatedBlog);
         })
         .catch(err => {

@@ -28,7 +28,6 @@ router.get("/post/:id",(req,res)=>{
     Blog.findByPk(req.params.id).then(commentBlog=>{
        
         const comments = commentBlog.toJSON()
-        console.log(comments)
         // const loggedIn = req.session.user?true:false
         res.render("comment",comments)
         // res.render("comment",{comments:commentBlog,loggedIn, username:req.session.user?.username})
@@ -63,10 +62,7 @@ router.get("/dashboard",(req,res)=>{
     User.findByPk(req.session.user.id,{
         include:[Blog]
     }).then(userData=>{
-        console.log(userData);
         const hbsData = userData.get({plain:true})
-        console.log("=======")
-        console.log(hbsData);
         hbsData.loggedIn = req.session.user?true:false
         res.render("dashboard",hbsData)
     })
