@@ -28,8 +28,8 @@ router.get("/post/:id",(req,res)=>{
     Blog.findByPk(req.params.id).then(commentBlog=>{
        
         const comments = commentBlog.toJSON()
-        // const loggedIn = req.session.user?true:false
-        res.render("comment",comments)
+        const loggedIn = req.session.user?true:false
+    res.render("comment",comments)    
         // res.render("comment",{comments:commentBlog,loggedIn, username:req.session.user?.username})
     })
 })

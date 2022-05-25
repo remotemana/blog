@@ -3,13 +3,11 @@ const router = express.Router();
 const {Comment} = require("../models/");
 
 router.post("/", (req, res) => {
-    if(!req.session.user){
-      return res.status(401).json({msg:"ya gotta login to create a blog post!"})
-  }
+  //   if(!req.session.user){
+  //     return res.status(401).json({msg:"ya gotta login to create a blog post!"})
+  // }
     Comment.create({
-      title:req.body.title,
-      commentBody:req.body.body,
-      UserId:req.session.user.id
+      commentBody:req.body
     })
       .then(newBlog => {
         res.json(newBlog);

@@ -5,7 +5,7 @@ document.querySelector("#comment").addEventListener("submit",e=>{
         username:document.querySelector("#commentInput").value
     }
     console.log(userObj)
-    fetch("/",{
+    fetch("/api/comments",{
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{
