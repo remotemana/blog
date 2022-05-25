@@ -1,19 +1,39 @@
 
 
-<div>
-    <h1>{{title}}</h1>
-    <p>{{body}}</p>
-    <h6>{{createdAt}}|{{Username}}</h6>
+<div class="uk-text-center">
+    <h1 style="text-decoration: underline; margin-top: 5%">{{post.title}}</h1>
+    <p>{{post.body}}</p>
+    <h6>{{post.createdAt}}</h6>
     <hr>
-    <p>{{commentBody}}</p>
-
+    {{!-- <p>{{>comment-details}}</p> --}}
 </div>
-    <form>
-        <input type="hidden" name="blog-id" value="{{id}}" />
+    <form class="uk-text-center" style="margin-bottom: 50px">
+        <input type="hidden" name="blog-id" value="{{post.id}}" />
         <input id="commentInput" />
         <button type="submit" id="comment">comment</button>
     </form>
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+{{!-- {{#if post.Comments}}
+    {{#each post.Comments}}
+    <p>{{commentBody}}</p>
+    {{/each}}
+{{/if}} --}}
+
+<ul class="uk-grid-small  uk-child-width-1-1 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid
+    style="padding-left: 5% !important; padding-right: 5% !important">
+
+{{#if post.Comments}}
+{{#each post.Comments}}
+        <li>
+            <div class="uk-card uk-card-default uk-card-body">
+                <hr class="uk-divider-icon">
+                <p style="word-wrap: break-word">{{commentBody}}</p>
+                <hr>
+            </div>
+        </li>
+    {{/each}}
 {{/if}}
+</ul>
+
+
+<script src="/js/comment.js"></script>

@@ -7,7 +7,8 @@ router.post("/", (req, res) => {
   //     return res.status(401).json({msg:"ya gotta login to create a blog post!"})
   // }
     Comment.create({
-      commentBody:req.body.commentBody,
+      ...req.body, 
+      // userId: req.session.userId
     })
       .then(newBlog => {
         console.log(newBlog)

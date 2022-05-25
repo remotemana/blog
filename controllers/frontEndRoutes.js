@@ -21,32 +21,32 @@ router.get("/home",(req,res)=>{
 
 
 // =============================================comment route test number two===============================
-router.get("/post/:id",(req,res)=>{
-    if(!req.session.user){
-        return res.redirect("/")
-    }
-    Blog.findByPk(req.params.id).then(commentBlog=>{
-       
-        const comments = commentBlog.toJSON()
-        const loggedIn = req.session.user?true:false
-    res.render("comment",comments)    
-        // res.render("comment",{comments:commentBlog,loggedIn, username:req.session.user?.username})
-    })
-})
-// =============================================comment route test number one===============================
 // router.get("/post/:id",(req,res)=>{
 //     if(!req.session.user){
-//         return res.redirect("/login")
+//         return res.redirect("/")
 //     }
-//     Blog.findByPk(req.params.user,{include:[Comment]}).then(commentBlog=>{
-//        console.log(commentBlog);
-//         const comments = commentBlog.map(commentBlog=>commentBlog.get({plain:true}))
-//         console.log("============================")
-//         console.log(comments)
+//     Blog.findByPk(req.params.id).then(commentBlog=>{
+       
+//         const comments = commentBlog.toJSON()
 //         const loggedIn = req.session.user?true:false
-//         res.render("comment",{blogs:commentBlog, loggedIn})
+//     res.render("comment",comments)    
+//         // res.render("comment",{comments:commentBlog,loggedIn, username:req.session.user?.username})
 //     })
 // })
+// =============================================comment route test number one===============================
+router.get("/post/:id",(req,res)=>{
+    if(!req.session.user){
+        return res.redirect("/login")
+    }
+    Blog.findByPk(req.params.id,{include:[Comment]}).then(commentBlog=>{
+       console.log(commentBlog);
+        const post = commentBlog.get({plain:true})
+        console.log("============================")
+        console.log(post)
+        const loggedIn = req.session.user?true:false
+        res.render("comment",{post: post, loggedIn})
+    })
+})
 
 router.get("/login",(req,res)=>{
     if(!req.session.user){
