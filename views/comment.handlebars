@@ -1,15 +1,4 @@
 
-{{!-- 
-<h1>{{title}}</h1>
-<p>{{body}}</p>
-<h6>{{createdAt}}|{{Username}}</h6>
-<hr>
-<p>{{commentBody}}</p>
-<form>
-<button type="button" id="comment">comment</button>
-<input type="text" id="commentInput" name="postId" value="{{id}}">
-</form> --}}
-
 
 <div>
     <h1>{{title}}</h1>
@@ -25,4 +14,6 @@
         <button type="submit" id="comment">comment</button>
     </form>
 
-<script src="/js/comment.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
