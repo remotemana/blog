@@ -38,7 +38,7 @@ document.querySelector("#signup").addEventListener("submit",e=>{
         }
     }).then(res=>{
         if(res.ok){
-            location.href="/dashboard"
+            location.href="/home"
         } else {
             alert("User could not be created")
         }

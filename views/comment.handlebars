@@ -2,8 +2,8 @@
 
 <div class="uk-text-center">
     <h1 style="text-decoration: underline; margin-top: 5%">{{post.title}}</h1>
-    <p>{{post.body}}</p>
-    <h6>{{post.createdAt}}</h6>
+    <p style="font-size: 20px; color: antiquewhite !important">{{post.body}}</p>
+    <h6>Created On: {{post.createdAt}}</h6>
     <hr>
     {{!-- <p>{{>comment-details}}</p> --}}
 </div>
@@ -13,11 +13,6 @@
         <button type="submit" id="comment">comment</button>
     </form>
 
-{{!-- {{#if post.Comments}}
-    {{#each post.Comments}}
-    <p>{{commentBody}}</p>
-    {{/each}}
-{{/if}} --}}
 
 <ul class="uk-grid-small  uk-child-width-1-1 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid
     style="padding-left: 5% !important; padding-right: 5% !important">
@@ -27,8 +22,10 @@
         <li>
             <div class="uk-card uk-card-default uk-card-body">
                 <hr class="uk-divider-icon">
-                <p style="word-wrap: break-word">{{commentBody}}</p>
+                <h4 style="text-decoration: underline">UserId: #{{id}}</h4>
+                <p style="word-wrap: break-word; font-size: 30px" >{{commentBody}}</p>
                 <hr>
+                 <h6> Posted On: {{createdAt}}</h6>
             </div>
         </li>
     {{/each}}
