@@ -35,9 +35,9 @@
 ---
 ## Mock-Ups
 ---
-![mockups](/blog/public/images/Homepage.png)
-![mockups](/blog/public/images/dashboard.gif)
-![mockups](/blog/public/images/deleteUserComment.gif)
+![mockups](public/images/Homepage.png)
+![mockups](public/images/dashboard.gif)
+![mockups](public/images/deleteUserComment.gif)
 ---
 ## Questions? Contact Me at...
 lucas.e.roman@gmail.com | [github.com](https://github.com/remotemana)
