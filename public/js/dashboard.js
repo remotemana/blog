@@ -38,6 +38,7 @@ document.querySelectorAll(".delete").forEach((deleteBtn)=>{
 })
 })
 
+
 console.log(document.querySelectorAll(".update"))
 document.querySelectorAll(".update").forEach((updateBtn)=>{
     updateBtn.addEventListener("click",e=>{
@@ -45,7 +46,7 @@ document.querySelectorAll(".update").forEach((updateBtn)=>{
         const blogObj = {
             body:e.target.previousElementSibling.value,
         }
-
+        console.log(blogObj)
         const id = e.target.getAttribute("id")
         console.log(e.target.previousElementSibling.value)
         fetch(`api/blogs/${id}`,{
